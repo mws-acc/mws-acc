@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack Developer Certification - Practice Exam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+            background-color: rgb(89, 36, 102);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        #quizContainer {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        #titleContainer {
+            background: rgba(146, 60, 168, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #titleContainer h1 {
+            font-family: 'Work Sans', sans-serif;
+            color: white;
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.4;
+            font-optical-sizing: auto;
+            font-weight:normal;
+            font-style: normal;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            padding-bottom: 10px;
+            background: linear-gradient(135deg, #ffecd2 10%, #fcb69f 100%);
+            border-radius: 10px;
+            border: 2px solid #ccc; /* Gray stroke */
+        }
+        .options {
+            margin-left: 10px;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            padding-bottom: 10px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff4e42;
+        }
+        #result {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quizContainer">
+    <div id="titleContainer">
+        <h1>Slack Developer Exam</h1>
+        <h1>Practice Exam</h1>
+    </div>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>Q1. In the context of handling user entry points for an app's workflow in Slack, what is the primary purpose of the interaction payload?</p>
+            <div class="options">
+                <input type="radio" name="q1" value="A"> A. To authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q1" value="B"> B. To store the state of the app's workflow.<br>
+                <input type="radio" name="q1" value="C"> C. To provide context for the user action and help the app construct a coherent response.<br>
+                <input type="radio" name="q1" value="D"> D. To execute the app's backend operations in response to the user action.<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Q2. In the Slack Events API, what is the purpose of the url_verification event type?</p>
+            <div class="options">
+                <input type="radio" name="q2" value="A"> A. It is used to verify the URL of the Slack workspace.<br>
+                <input type="radio" name="q2" value="B"> B. It is used to verify the URL of the user's profile picture.<br>
+                <input type="radio" name="q2" value="C"> C. It is used to verify the ownership of the Request URL by issuing a challenge request.<br>
+                <input type="radio" name="q2" value="D"> D. It is used to verify the URL of the message attachments.<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Q3. What is the most effective way to automate and enhance operations on a Slack workspace?</p>
+            <div class="options">
+                <input type="radio" name="q3" value="A"> A. Use Slack's built-in reminders and notifications for all automation tasks.<br>
+                <input type="radio" name="q3" value="B"> B. Develop a custom bot outside of Slack and integrate it via webhooks.<br>
+                <input type="radio" name="q3" value="C"> C. Rely solely on manual slash commands for all repetitive tasks.<br>
+                <input type="radio" name="q3" value="D"> D. Leverage Slack's interactive features, such as shortcuts, slash commands, and interactive messages to create complex workflows.<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Q4. In the context of Slack's different surfaces, which of the following use cases is best suited for the use of modals?</p>
+            <div class="options">
+                <input type="radio" name="q4" value="A"> A. To provide a persistent, customizable interface for each user.<br>
+                <input type="radio" name="q4" value="B"> B. To send notifications and updates to a channel.<br>
+                <input type="radio" name="q4" value="C"> C. To collect data from users or display dynamic, temporary information.<br>
+                <input type="radio" name="q4" value="D"> D. To create a long-term, interactive conversation with users.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q5. When is it appropriate to set up a team to collaborate on a Slack app?</p>
+            <div class="options">
+                <input type="radio" name="q5" value="A"> A. When the app is intended for public distribution.<br>
+                <input type="radio" name="q5" value="B"> B. When the app is being developed by a single developer.<br>
+                <input type="radio" name="q5" value="C"> C. When the app is only used within a single channel.<br>
+                <input type="radio" name="q5" value="D"> D. When the app's development involves multiple contributors from the same workspace.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q6. In the context of building common workflows for Slack apps, what is the primary purpose of the 'workflow_step_execute' event?</p>
+            <div class="options">
+                <input type="radio" name="q6" value="A"> A. To notify the app when a new workflow is created.<br>
+                <input type="radio" name="q6" value="B"> B. To trigger the app's workflow when a specific event occurs in the Slack workspace.<br>
+                <input type="radio" name="q6" value="C"> C. To notify the app when a workflow containing one of the app's steps is used.<br>
+                <input type="radio" name="q6" value="D"> D. To execute the app's backend operations in response to a user action.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q7. In the context of designing an app that interacts effectively with Slack's architecture, which of the following is the most accurate description of how to handle interaction payloads?</p>
+            <div class="options">
+                <input type="radio" name="q7" value="A"> A. The app should ignore the interaction payload and rely solely on the user's input.<br>
+                <input type="radio" name="q7" value="B"> B. The app should use the interaction payload to execute backend operations and ignore the user who initiated the interaction.<br>
+                <input type="radio" name="q7" value="C"> C. The app should use the interaction payload to authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q7" value="D"> D. The app should use the interaction payload to understand the context of the user action and construct a coherent response.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q8. In the context of handling possible user entry points for an app's workflow in Slack, which of the following is the correct way to handle interaction payloads?</p>
+            <div class="options">
+                <input type="radio" name="q8" value="A"> A. The app should ignore the interaction payload and rely solely on the user's input.<br>
+                <input type="radio" name="q8" value="B"> B. The app should use the interaction payload to execute backend operations and ignore the user who initiated the interaction.<br>
+                <input type="radio" name="q8" value="C"> C. The app should use the interaction payload to authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q8" value="D"> D. The app should use the interaction payload to understand the context of the user action and construct a coherent response.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q9. In the context of developing a Slack app, when is it most appropriate to use Slash Commands?</p>
+            <div class="options">
+                <input type="radio" name="q9" value="A"> A. When you want to authenticate the user who is using the app.<br>
+                <input type="radio" name="q9" value="B"> B. When you want to create a bot that can participate in conversations.<br>
+                <input type="radio" name="q9" value="C"> C. When you want to create entry points for complex workflows or integrations with external services.<br>
+                <input type="radio" name="q9" value="D"> D. When you want to store the state of the app's workflow.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q10. In the context of building a UI for your app's surfaces using Block Kit, what is the maximum number of blocks you can include in a modal or Home tab?</p>
+            <div class="options">
+                <input type="radio" name="q10" value="A"> A. 25<br>
+                <input type="radio" name="q10" value="B"> B. 50<br>
+                <input type="radio" name="q10" value="C"> C. 75<br>
+                <input type="radio" name="q10" value="D"> D. 100<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q11. Which of the following interactive components in Slack's Block Kit does NOT allow users to select multiple options?</p>
+            <div class="options">
+                <input type="radio" name="q11" value="A"> A. Checkboxes<br>
+                <input type="radio" name="q11" value="B"> B. Multi-select menus<br>
+                <input type="radio" name="q11" value="C"> C. Radio buttons<br>
+                <input type="radio" name="q11" value="D"> D. Overflow menus<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q12. In the context of developing a Slack app, which API is most suitable for building apps that respond to activities in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q12" value="A"> A. Web API<br>
+                <input type="radio" name="q12" value="B"> B. Admin API<br>
+                <input type="radio" name="q12" value="C"> C. SCIM API<br>
+                <input type="radio" name="q12" value="D"> D. Events API<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q13. When sending a HTTP POST request using Slack's Web API, which of the following is a correct way to present your arguments?</p>
+            <div class="options">
+                <input type="radio" name="q13" value="A"> A. As GET querystring parameters only.<br>
+                <input type="radio" name="q13" value="B"> B. As a mix of both GET and POST parameters.<br>
+                <input type="radio" name="q13" value="C"> C. As standard POST parameters or use JSON.<br>
+                <input type="radio" name="q13" value="D"> D. As application/json attributes only.<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Q14. When using the Slack Events API, what is the sequence of actions that occur after a user creates a circumstance that triggers an event subscription to your application?</p>
+            <div class="options">
+                <input type="radio" name="q14" value="A"> A. Your server receives a payload of JSON describing the event, your server acknowledges receipt of the event, your business logic decides what to do about the event, your server carries out that decision.<br>
+                <input type="radio" name="q14" value="B"> B. Your server acknowledges receipt of the event, your server receives a payload of JSON describing the event, your business logic decides what to do about the event, your server carries out that decision.<br>
+                <input type="radio" name="q14" value="C"> C. Your server receives a payload of JSON describing the event, your business logic decides what to do about the event, your server acknowledges receipt of the event, your server carries out that decision.<br>
+                <input type="radio" name="q14" value="D"> D. Your server receives a payload of JSON describing the event, your server acknowledges receipt of the event, your server carries out that decision, your business logic decides what to do about the event.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q15. What is the primary difference between using Socket Mode and HTTP-based event delivery in a Slack app?</p>
+            <div class="options">
+                <input type="radio" name="q15" value="A"> A. Socket Mode uses HTTP while HTTP-based event delivery uses WebSockets.<br>
+                <input type="radio" name="q15" value="B"> B. Socket Mode requires a public HTTP Request URL while HTTP-based event delivery does not.<br>
+                <input type="radio" name="q15" value="C"> C. Socket Mode and HTTP-based event delivery are the same and there's no difference.<br>
+                <input type="radio" name="q15" value="D"> D. Socket Mode uses WebSockets and does not require a public HTTP Request URL, while HTTP-based event delivery sends payloads to a public endpoint.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q16. Which of the following is NOT considered a legacy feature in Slack's APIs?</p>
+            <div class="options">
+                <input type="radio" name="q16" value="A"> A. Interactive messages<br>
+                <input type="radio" name="q16" value="B"> B. Message buttons<br>
+                <input type="radio" name="q16" value="C"> C. Legacy tokens<br>
+                <input type="radio" name="q16" value="D"> D. Block Kit<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q17. What happens when your app exceeds the rate limit when using any of Slack's HTTP-based APIs?</p>
+            <div class="options">
+                <input type="radio" name="q17" value="A"> A. Slack will return a HTTP 200 OK response.<br>
+                <input type="radio" name="q17" value="B"> B. Slack will return a HTTP 404 Not Found error.<br>
+                <input type="radio" name="q17" value="C"> C. Slack will return a HTTP 500 Internal Server Error.<br>
+                <input type="radio" name="q17" value="D"> D. Slack will return a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q18. What is the purpose of the 'X-Slack-Request-Time' header in the context of rate limits in Slack's HTTP-based APIs?</p>
+            <div class="options">
+                <input type="radio" name="q18" value="A"> A. It indicates the number of requests made in the current minute.<br>
+                <input type="radio" name="q18" value="B"> B. It indicates the time at which the request was received by Slack.<br>
+                <input type="radio" name="q18" value="C"> C. It indicates the time at which the request was sent by the client.<br>
+                <input type="radio" name="q18" value="D"> D. It indicates the remaining number of requests that can be made in the current minute.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q19. In the context of creating a modal in Slack, what is the maximum number of views that can exist in a modal's view stack at any one time?</p>
+            <div class="options">
+                <input type="radio" name="q19" value="A"> A. There is no limit.<br>
+                <input type="radio" name="q19" value="B"> B. 5 views.<br>
+                <input type="radio" name="q19" value="C"> C. 3 views.<br>
+                <input type="radio" name="q19" value="D"> D. 1 view.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q20. What is the underlying principle recommended to keep in mind at all times when building a great user experience on Slack?</p>
+            <div class="options">
+                <input type="radio" name="q20" value="A"> A. Build with a focus on maximizing the number of features.<br>
+                <input type="radio" name="q20" value="B"> B. Build with a focus on making the app as complex as possible.<br>
+                <input type="radio" name="q20" value="C"> C. Build with a focus on making the app as unique as possible.<br>
+                <input type="radio" name="q20" value="D"> D. Build with empathy for the end user.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q21. When developing a Slack app, which of the following is NOT recommended as a best practice for creating a good user experience?</p>
+            <div class="options">
+                <input type="radio" name="q21" value="A"> A. Understanding your audience.<br>
+                <input type="radio" name="q21" value="B"> B. Outlining your use cases.<br>
+                <input type="radio" name="q21" value="C"> C. Ignoring the onboarding experience.<br>
+                <input type="radio" name="q21" value="D"> D. Storyboarding how each interaction looks.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q22. In the context of designing for security in a Slack app, what is the best practice for handling access tokens?</p>
+            <div class="options">
+                <input type="radio" name="q22" value="A"> A. Store the access token in a public version control system.<br>
+                <input type="radio" name="q22" value="B"> B. Embed the access token directly in your code.<br>
+                <input type="radio" name="q22" value="C"> C. Share the access token with team members via email.<br>
+                <input type="radio" name="q22" value="D"> D. Access the access token via an environment variable.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q23. What is the primary purpose of the OAuth flow in a Slack app?</p>
+            <div class="options">
+                <input type="radio" name="q23" value="A"> A. To authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q23" value="B"> B. To store the state of the app's workflow.<br>
+                <input type="radio" name="q23" value="C"> C. To provide context for the user action and help the app construct a coherent response.<br>
+                <input type="radio" name="q23" value="D"> D. To allow a user to install your app and grant it the necessary scopes to operate.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q24. What is the primary purpose of the temporary authorization code in the OAuth installation flow for Slack apps?</p>
+            <div class="options">
+                <input type="radio" name="q24" value="A"> A. It is used to authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q24" value="B"> B. It is used to store the state of the app's workflow.<br>
+                <input type="radio" name="q24" value="C"> C. It is used to provide context for the user action and help the app construct a coherent response.<br>
+                <input type="radio" name="q24" value="D"> D. It is used to exchange for an access token after the user approves the app.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q25. When requesting scopes for your Slack app, which of the following is a correct statement?</p>
+            <div class="options">
+                <input type="radio" name="q25" value="A"> A. Scopes are not necessary for Slack apps.<br>
+                <input type="radio" name="q25" value="B"> B. Scopes restrict your app's permissions in the development workspace.<br>
+                <input type="radio" name="q25" value="C"> C. Scopes are requested after the app is installed.<br>
+                <input type="radio" name="q25" value="D"> D. Scopes give your app permission to perform certain actions in your development workspace.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q26. In the context of Slack app development, which of the following statements about token types is correct?</p>
+            <div class="options">
+                <input type="radio" name="q26" value="A"> A. User tokens represent the app across organizations, including installations by all individual users on all workspaces in a given organization.<br>
+                <input type="radio" name="q26" value="B"> B. Bot tokens represent workspace members and are issued for the user who installed the app and for users who authenticate the app.<br>
+                <input type="radio" name="q26" value="C"> C. App-level tokens represent a bot associated with the app installed in a workspace and are not tied to a user's identity.<br>
+                <input type="radio" name="q26" value="D"> D. Bot tokens represent a bot associated with the app installed in a workspace and are not tied to a user's identity.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q27. Which of the following is NOT a security feature provided by Slack to protect data?</p>
+            <div class="options">
+                <input type="radio" name="q27" value="A"> A. Data encryption at rest and in transit<br>
+                <input type="radio" name="q27" value="B"> B. Single sign-on and domain claiming<br>
+                <input type="radio" name="q27" value="C"> C. Slack Enterprise Key Management (Slack EKM)<br>
+                <input type="radio" name="q27" value="D"> D. End-to-end encryption of all messages<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q28. In the context of storing and retrieving data and tokens safely in Slack, which of the following is NOT a recommended practice?</p>
+            <div class="options">
+                <input type="radio" name="q28" value="A"> A. Storing tokens in a way that directly links them to the owner (workspace and user).<br>
+                <input type="radio" name="q28" value="B"> B. Using proper TLS to encrypt all traffic between you and the customer; you and the service you're using the token with.<br>
+                <input type="radio" name="q28" value="C"> C. Exposing the token to the end user once it is stored in a database.<br>
+                <input type="radio" name="q28" value="D"> D. Ensuring that if a user deletes their account, data, or integration, you also delete that token from your production systems, and backups.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q29. In the context of designing an app for Slack's Enterprise Grid, what is the primary advantage of developing an org-wide app?</p>
+            <div class="options">
+                <input type="radio" name="q29" value="A"> A. Org-wide apps can be developed with less code.<br>
+                <input type="radio" name="q29" value="B"> B. Org-wide apps can bypass OAuth authorization.<br>
+                <input type="radio" name="q29" value="C"> C. Org-wide apps can be installed once and deployed across an entire organization.<br>
+                <input type="radio" name="q29" value="D"> D. Org-wide apps can access private channels without explicit permission.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q30. When designing your app for Slack's Enterprise Grid, which of the following should you consider regarding the Events API?</p>
+            <div class="options">
+                <input type="radio" name="q30" value="A"> A. The Events API does not support Enterprise Grid.<br>
+                <input type="radio" name="q30" value="B"> B. The Events API can only be used with public channels in Enterprise Grid.<br>
+                <input type="radio" name="q30" value="C"> C. The Events API can only handle events related to channels and direct message conversations the app is party to.<br>
+                <input type="radio" name="q30" value="D"> D. The Events API can handle events related to channels and direct message conversations the app is party to, and it can be used with Socket Mode to receive events through a dynamic WebSocket.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q31. What is the primary purpose of an Enterprise Grid Sandbox in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q31" value="A"> A. To provide a space for users to chat and share files without any restrictions.<br>
+                <input type="radio" name="q31" value="B"> B. To provide a testing environment for developers to experience the unique constraints and opportunities of Enterprise Grid.<br>
+                <input type="radio" name="q31" value="C"> C. To provide a space for users to store and retrieve data safely.<br>
+                <input type="radio" name="q31" value="D"> D. To provide a space for users to execute backend operations.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q32. Which of the following is NOT a characteristic of an Enterprise Grid Sandbox in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q32" value="A"> A. It allows you to experience the unique constraints and opportunities of channels between organizations.<br>
+                <input type="radio" name="q32" value="B"> B. It provides access to workspaces with the proper plan level to grant access to channels between organizations.<br>
+                <input type="radio" name="q32" value="C"> C. It can be requested if you don't already have access to workspaces with the proper plan level.<br>
+                <input type="radio" name="q32" value="D"> D. It automatically installs all Slack apps across all workspaces.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q33. When should you add support for channels that are shared externally with Slack Connect?</p>
+            <div class="options">
+                <input type="radio" name="q33" value="A"> A. When you want to add external people to the #general channel.<br>
+                <input type="radio" name="q33" value="B"> B. When you want to communicate with more than 250 organizations in a single channel.<br>
+                <input type="radio" name="q33" value="C"> C. When you want to work alongside people from other companies in the same Slack channel.<br>
+                <input type="radio" name="q33" value="D"> D. When you want to allow guests to invite external people to channels.<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Q34. When should you use sample code and external resources in Slack app development?</p>
+            <div class="options">
+                <input type="radio" name="q34" value="A"> A. When you want to bypass the Slack API and develop custom functionalities.<br>
+                <input type="radio" name="q34" value="B"> B. When you want to develop a Slack app without considering the scalability and maintainability of the code.<br>
+                <input type="radio" name="q34" value="C"> C. When you want to learn and understand how to develop various functionalities in a Slack app.<br>
+                <input type="radio" name="q34" value="D"> D. When you want to develop a Slack app without adhering to the security practices recommended by Slack.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q35. When should you use the Bolt development framework to build Slack apps?</p>
+            <div class="options">
+                <input type="radio" name="q35" value="A"> A. When you want to build Slack apps without using any of Slack's APIs.<br>
+                <input type="radio" name="q35" value="B"> B. When you want to build Slack apps but don't want to handle events or interactive components.<br>
+                <input type="radio" name="q35" value="C"> C. When you want to rapidly develop Slack apps using JavaScript, Python, or Java, and leverage Slack's most commonly used features.<br>
+                <input type="radio" name="q35" value="D"> D. When you want to build Slack apps without handling any authentication or permissions.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q36. What is the purpose and value of the Block Kit Builder in Slack app development?</p>
+            <div class="options">
+                <input type="radio" name="q36" value="A"> A. To create Slack apps without any coding.<br>
+                <input type="radio" name="q36" value="B"> B. To bypass Slack's APIs and create custom functionalities.<br>
+                <input type="radio" name="q36" value="C"> C. To visually prototype app layouts, design interactive components, and generate payloads for use in your app's code.<br>
+                <input type="radio" name="q36" value="D"> D. To create Slack apps without considering the user interface and user experience.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q37. What are some use cases for Slack Developer Tools (SDT)?</p>
+            <div class="options">
+                <input type="radio" name="q37" value="A"> A. To integrate Slack with external systems that don't support APIs.<br>
+                <input type="radio" name="q37" value="B"> B. To send alerts to a Slack channel, initiate complex cross-system workflows, and build custom apps for specific needs.<br>
+                <input type="radio" name="q37" value="C"> C. To replace all other communication and collaboration tools in your organization.<br>
+                <input type="radio" name="q37" value="D"> D. To bypass Slack's APIs and create custom functionalities.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q38. Which of the following tasks can be automated using the Slack Admin API?</p>
+            <div class="options">
+                <input type="radio" name="q38" value="A"> A. Automatically send direct messages to all users in a workspace.<br>
+                <input type="radio" name="q38" value="B"> B. Change the theme of the Slack workspace.<br>
+                <input type="radio" name="q38" value="C"> C. Set an existing user to be an admin user.<br>
+                <input type="radio" name="q38" value="D"> D. Create new channels in a workspace.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q39. Which of the following is NOT a valid operation that can be performed using the Slack Admin API?</p>
+            <div class="options">
+                <input type="radio" name="q39" value="A"> A. Setting an existing user to be a workspace owner.<br>
+                <input type="radio" name="q39" value="B"> B. Clearing user-specific session settings.<br>
+                <input type="radio" name="q39" value="C"> C. Listing all users in a Slack team.<br>
+                <input type="radio" name="q39" value="D"> D. Changing the password of a user.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q40. Which of the following tasks cannot be performed using the Slack SCIM API?</p>
+            <div class="options">
+                <input type="radio" name="q40" value="A"> A. Creating a new user.<br>
+                <input type="radio" name="q40" value="B"> B. Deleting an existing user.<br>
+                <input type="radio" name="q40" value="C"> C. Updating a user's profile information.<br>
+                <input type="radio" name="q40" value="D"> D. Changing a user's password.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q41. What is the primary purpose of the SCIM API in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q41" value="A"> A. To send messages to channels.<br>
+                <input type="radio" name="q41" value="B"> B. To manage user sessions.<br>
+                <input type="radio" name="q41" value="C"> C. To manage users and user groups.<br>
+                <input type="radio" name="q41" value="D"> D. To manage app installations.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q42. Which of the following is NOT a valid operation that can be performed using the Slack Audit Logs API?</p>
+            <div class="options">
+                <input type="radio" name="q42" value="A"> A. Retrieving a list of all workspace members.<br>
+                <input type="radio" name="q42" value="B"> B. Monitoring file uploads.<br>
+                <input type="radio" name="q42" value="C"> C. Tracking workspace setting changes.<br>
+                <input type="radio" name="q42" value="D"> D. Monitoring app installations.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q43. Which of the following is NOT a valid use case for the Slack Discovery API?</p>
+            <div class="options">
+                <input type="radio" name="q43" value="A"> A. Data-loss prevention.<br>
+                <input type="radio" name="q43" value="B"> B. Compliance archiving.<br>
+                <input type="radio" name="q43" value="C"> C. eDiscovery.<br>
+                <input type="radio" name="q43" value="D"> D. Real-time message sending.<br>
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>Q44. Which type of Slack token is best suited for most apps, providing a granular permission model to request only the scopes needed?</p>
+            <div class="options">
+                <input type="radio" name="q44" value="A"> A. User tokens<br>
+                <input type="radio" name="q44" value="B"> B. App-level tokens<br>
+                <input type="radio" name="q44" value="C"> C. Legacy tokens<br>
+                <input type="radio" name="q44" value="D"> D. Bot tokens<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q45. Why might you want to contain a Slack app to a single workspace instead of distributing it publicly?</p>
+            <div class="options">
+                <input type="radio" name="q45" value="A"> A. To avoid the need for SSL support for all OAuth redirect URLs and request URLs.<br>
+                <input type="radio" name="q45" value="B"> B. To prevent the app from being uninstalled by users in other workspaces.<br>
+                <input type="radio" name="q45" value="C"> C. To bypass the need for building an OAuth 2.0 flow for installation in other workspaces.<br>
+                <input type="radio" name="q45" value="D"> D. To ensure the app can be installed without admin approval in all workspaces.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q46. What is the primary requirement for sharing a Slack app with other workspaces?</p>
+            <div class="options">
+                <input type="radio" name="q46" value="A"> A. The app must be associated with multiple workspaces.<br>
+                <input type="radio" name="q46" value="B"> B. The app must be installed in the workspace of every user.<br>
+                <input type="radio" name="q46" value="C"> C. The app must use OAuth 2.0 for authorization.<br>
+                <input type="radio" name="q46" value="D"> D. The app must be approved by all workspace administrators.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q47. What is the key difference between a single workspace app, a distributed app, and a published App Directory app in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q47" value="A"> A. A single workspace app can be installed in multiple workspaces, a distributed app can only be installed in its associated workspace, and a published App Directory app can be installed in any workspace.<br>
+                <input type="radio" name="q47" value="B"> B. A single workspace app can only be installed in its associated workspace, a distributed app can be installed in multiple workspaces, and a published App Directory app is a distributed app that has been approved for listing in the Slack App Directory.<br>
+                <input type="radio" name="q47" value="C"> C. A single workspace app can only be installed in its associated workspace, a distributed app is a single workspace app that has been approved for listing in the Slack App Directory, and a published App Directory app can be installed in any workspace.<br>
+                <input type="radio" name="q47" value="D"> D. A single workspace app is a distributed app that has been approved for listing in the Slack App Directory, a distributed app can only be installed in its associated workspace, and a published App Directory app can be installed in any workspace.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q48. What are the key steps to submit an app to the Slack App Directory?</p>
+            <div class="options">
+                <input type="radio" name="q48" value="A"> A. Submit the app with basic information, provide a user guide, and wait for approval.<br>
+                <input type="radio" name="q48" value="B"> B. Prepare the app for public distribution, submit the app, and it will be automatically approved.<br>
+                <input type="radio" name="q48" value="C"> C. Prepare the app for public distribution, read Slack's terms and policies, provide a great user experience, complete the submission checklist, and then submit the app for review.<br>
+                <input type="radio" name="q48" value="D"> D. Submit the app with a detailed description, provide a user guide, and it will be reviewed within 24 hours.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q49. What is a key principle to consider when designing a Slack app for effective interaction with Slack's architecture?</p>
+            <div class="options">
+                <input type="radio" name="q49" value="A"> A. Design the app to send as many notifications as possible to keep users engaged.<br>
+                <input type="radio" name="q49" value="B"> B. Design the app to use only direct messages for all interactions to ensure privacy.<br>
+                <input type="radio" name="q49" value="C"> C. Design the app to use a complex and technical language to demonstrate the app's sophistication.<br>
+                <input type="radio" name="q49" value="D"> D. Design the app to be brief, clear, and human in its interactions, using blocks and conversations effectively.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q50. Which of the following is NOT a way for users to directly invoke your app in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q50" value="A"> A. Using Shortcuts to trigger workflows.<br>
+                <input type="radio" name="q50" value="B"> B. Typing a Slash Command into the message composer box.<br>
+                <input type="radio" name="q50" value="C"> C. Clicking on an interactive message button.<br>
+                <input type="radio" name="q50" value="D"> D. Sending an email to the app's registered email address.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q51. In the context of using the Slack Web API, which of the following is NOT a recommended best practice?</p>
+            <div class="options">
+                <input type="radio" name="q51" value="A"> A. Using HTTPS, SSL, and TLS v1.2 or above when calling all methods.<br>
+                <input type="radio" name="q51" value="B"> B. Sending your token as part of the query string.<br>
+                <input type="radio" name="q51" value="C"> C. Setting the Content-type HTTP header to application/json when sending JSON POST data.<br>
+                <input type="radio" name="q51" value="D"> D. Transmitting your token as a bearer token in the Authorization HTTP header.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q52. In the context of the Slack Events API, what is the purpose of the 'challenge' field in the URL verification handshake?</p>
+            <div class="options">
+                <input type="radio" name="q52" value="A"> A. To authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q52" value="B"> B. To store the state of the app's workflow.<br>
+                <input type="radio" name="q52" value="C"> C. To provide a randomly generated string that the server must respond with to verify ownership.<br>
+                <input type="radio" name="q52" value="D"> D. To execute the app's backend operations in response to the user action.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q53. What is the primary purpose of Socket Mode in Slack API?</p>
+            <div class="options">
+                <input type="radio" name="q53" value="A"> A. To provide a static HTTP endpoint for the app.<br>
+                <input type="radio" name="q53" value="B"> B. To allow the app to use the Events API and interactive features without exposing a public HTTP Request URL.<br>
+                <input type="radio" name="q53" value="C"> C. To enable the app to use a static WebSocket URL for communication.<br>
+                <input type="radio" name="q53" value="D"> D. To allow the app to use the Events API and interactive features only through a public HTTP Request URL.<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Q54. What is the primary purpose of granular bot tokens in Slack's API?</p>
+            <div class="options">
+                <input type="radio" name="q54" value="A"> A. To provide a way to limit the number of API calls a bot can make.<br>
+                <input type="radio" name="q54" value="B"> B. To specify the geographical regions where a bot can operate.<br>
+                <input type="radio" name="q54" value="C"> C. To represent workspace-level installation of an app and maintain the same access a user has to a workspace -- essentially acting as a user.<br>
+                <input type="radio" name="q54" value="D"> D. To define the user roles that can interact with a bot.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q55. What is the primary purpose of the 'text' parameter in a Slash Command payload in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q55" value="A"> A. It contains the user ID of the user who invoked the command.<br>
+                <input type="radio" name="q55" value="B"> B. It contains the command that was typed in to trigger the request.<br>
+                <input type="radio" name="q55" value="C"> C. It contains everything after the first space following the command, treated as a single parameter passed to the app.<br>
+                <input type="radio" name="q55" value="D"> D. It contains the URL to which the payload is sent when the command is invoked.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q56. In the context of Slack app security, which of the following is NOT a recommended practice for storing and handling tokens?</p>
+            <div class="options">
+                <input type="radio" name="q56" value="A"> A. Storing tokens in a way that directly links them to the owner (workspace and user).<br>
+                <input type="radio" name="q56" value="B"> B. Deleting tokens from all production systems and backups when they are no longer needed.<br>
+                <input type="radio" name="q56" value="C"> C. Using proper TLS to encrypt all traffic between your application and the customer.<br>
+                <input type="radio" name="q56" value="D"> D. Storing tokens in client-side JavaScript code for easy access.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q57. When using the 'admin.users.setAdmin' method in Slack's Admin API, which of the following is NOT a potential error that could be returned?</p>
+            <div class="options">
+                <input type="radio" name="q57" value="A"> A. failed_to_set_user_to_admin<br>
+                <input type="radio" name="q57" value="B"> B. invalid_permissions<br>
+                <input type="radio" name="q57" value="C"> C. user_not_found<br>
+                <input type="radio" name="q57" value="D"> D. user_already_admin<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q58. Which of the following methods is NOT part of the Audit Logs API in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q58" value="A"> A. getLogs()<br>
+                <input type="radio" name="q58" value="B"> B. getSchemas()<br>
+                <input type="radio" name="q58" value="C"> C. getActions()<br>
+                <input type="radio" name="q58" value="D"> D. getUsers()<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q59. What is the primary purpose of the Discovery API in Slack?</p>
+            <div class="options">
+                <input type="radio" name="q59" value="A"> A. To authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q59" value="B"> B. To store the state of the app's workflow.<br>
+                <input type="radio" name="q59" value="C"> C. To export or act on messages and files from Slack using approved third-party apps.<br>
+                <input type="radio" name="q59" value="D"> D. To execute the app's backend operations in response to the user action.<br>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>Q60. In the context of Slack's Data Loss Prevention (DLP) feature, what is the primary purpose of DLP rules?</p>
+            <div class="options">
+                <input type="radio" name="q60" value="A"> A. To authenticate the user who initiated the interaction.<br>
+                <input type="radio" name="q60" value="B"> B. To store the state of the app's workflow.<br>
+                <input type="radio" name="q60" value="C"> C. To flag messages or files for administrative action if they violate custom rules.<br>
+                <input type="radio" name="q60" value="D"> D. To execute the app's backend operations in response to the user action.<br>
+            </div>
+        </div>
+        
+        
+        <!-- Submit button -->
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    const correctAnswers = {
+        q1: {answer: 'C', reason: 'It provides context for the user action.'},
+    q2: {answer: 'C', reason: 'It is used to verify the ownership of the Request URL by issuing a challenge request.'},
+    q3: {answer: 'D', reason: 'Leveraging interactive features facilitates complex workflow automation.'},
+    q4: {answer: 'C', reason: 'Modals are best suited for collecting data or displaying dynamic information temporarily.'},
+    q5: {answer: 'D', reason: 'A team setup is essential when the app development involves multiple contributors.'},
+    q6: {answer: 'C', reason: 'It notifies the app when a workflow containing one of the apps steps is used.'},
+    q7: {answer: 'D', reason: 'Interaction payloads help understand the user action and context, aiding coherent response.'},
+    q8: {answer: 'D', reason: 'Correct handling involves using the payload to understand user actions and form responses.'},
+    q9: {answer: 'C', reason: 'Slash Commands are ideal for creating entry points for complex workflows or external integrations.'},
+    q10: {answer: 'D', reason: 'The maximum number of blocks allowed in a modal or Home tab is 100.'},
+    q11: {answer: 'C', reason: 'Radio buttons allow only one selection at a time, unlike checkboxes and multi-select menus.'},
+    q12: {answer: 'D', reason: 'The Events API allows apps to respond to activities within Slack efficiently.'},
+    q13: {answer: 'C', reason: 'POST requests can be made with standard POST parameters or by using JSON.'},
+    q14: {answer: 'A', reason: 'The sequence includes receiving a JSON payload, acknowledging the event, deciding the action, and executing the decision.'},
+    q15: {answer: 'D', reason: 'Socket Mode uses WebSockets and does not require a public HTTP Request URL, unlike HTTP-based event delivery.'},
+    q16: {answer: 'D', reason: 'Block Kit is not a legacy feature; it is a current UI framework used for creating rich app surfaces.'},
+    q17: {answer: 'D', reason: 'Exceeding rate limits results in a HTTP 429 Too Many Requests error and a Retry-After header.'},
+    q18: {answer: 'B', reason: 'The X-Slack-Request-Time header indicates the time at which Slack received the request.'},
+    q19: {answer: 'C', reason: 'A modal can have up to three views stacked at any one time, providing a layered interaction experience.'},
+    q20: {answer: 'D', reason: 'It’s recommended to build with empathy for the end user, focusing on user-friendly design.'},
+    q21: {answer: 'C', reason: 'Ignoring the onboarding experience is not recommended as it is crucial for helping users understand how to use your app effectively.'},
+    q22: {answer: 'D', reason: 'Access tokens should be accessed via an environment variable to keep them secure and not expose them in your code.'},
+    q23: {answer: 'D', reason: 'The OAuth flow allows a user to install your app and grant it the necessary scopes to operate within their Slack workspace.'},
+    q24: {answer: 'D', reason: 'The temporary authorization code is exchanged for an access token after the user approves the app, allowing it to interact with the Slack API.'},
+    q25: {answer: 'D', reason: 'Scopes give your app permission to perform certain actions within a Slack workspace, determined during the app installation process.'},
+    q26: {answer: 'D', reason: 'Bot tokens represent a bot associated with the app installed in a workspace and are not tied to a user\'s identity.'},
+    q27: {answer: 'D', reason: 'Slack does not provide end-to-end encryption of all messages, which is not listed among its security features.'},
+    q28: {answer: 'C', reason: 'Exposing the token to the end user once it is stored in a database is not recommended and compromises security.'},
+    q29: {answer: 'C', reason: 'Org-wide apps can be installed once and used across an entire organization, simplifying the installation and use of the app.'},
+    q30: {answer: 'D', reason: 'The Events API can handle events related to channels and DMs the app is party to, and can be used with Socket Mode in Enterprise Grid environments.'},
+    q31: {answer: 'B', reason: 'An Enterprise Grid Sandbox provides a testing environment to experience the unique constraints and opportunities of Enterprise Grid.'},
+    q32: {answer: 'D', reason: 'An Enterprise Grid Sandbox does not automatically install all Slack apps across workspaces; it is for testing purposes only.'},
+    q33: {answer: 'C', reason: 'Slack Connect allows working alongside people from other companies in the same Slack channel.'},
+    q34: {answer: 'C', reason: 'Sample code and external resources are beneficial for learning and understanding Slack app development functionalities.'},
+    q35: {answer: 'C', reason: 'The Bolt framework helps rapidly develop Slack apps using JavaScript, Python, or Java, leveraging commonly used Slack features.'},
+    q36: {answer: 'C', reason: 'The Block Kit Builder is used to visually prototype app layouts and design interactive components.'},
+    q37: {answer: 'B', reason: 'Slack Developer Tools can send alerts to Slack channels and initiate complex cross-system workflows.'},
+    q38: {answer: 'C', reason: 'The Slack Admin API can automate tasks such as setting an existing user to be an admin user.'},
+    q39: {answer: 'D', reason: 'Changing a user\'s password is not a valid operation using the Slack Admin API; this is typically managed by the user or via SSO.'},
+    q40: {answer: 'D', reason: 'The Slack SCIM API does not provide methods for changing a user’s password; this is managed externally or via SSO.'},
+    q41: {answer: 'C', reason: 'The SCIM API is used to manage users and user groups in Slack, automating user provisioning and deprovisioning.'},
+    q42: {answer: 'A', reason: 'Retrieving a list of all workspace members is not a valid operation for the Slack Audit Logs API.'},
+    q43: {answer: 'D', reason: 'Real-time message sending is not a valid use case for the Slack Discovery API; it is intended for data-loss prevention and compliance archiving.'},
+    q44: {answer: 'D', reason: 'Bot tokens represent a bot associated with the app installed in a workspace and are not tied to a user\'s identity.'},
+    q45: {answer: 'C', reason: 'Containing a Slack app to a single workspace bypasses the need for building an OAuth 2.0 flow for installation in other workspaces.'},
+    q46: {answer: 'C', reason: 'To share a Slack app with other workspaces, building an authorization flow using OAuth 2.0 is required to generate access tokens for each workspace and user, facilitating installation in multiple workspaces.'},
+    q47: {answer: 'B', reason: 'A single workspace app is installed in its associated workspace, a distributed app can be installed in multiple workspaces, and a published App Directory app is a distributed app approved for listing.'},
+    q48: {answer: 'C', reason: 'Submitting an app involves preparing it, reading Slack\'s terms, ensuring a great user experience, completing a checklist, and then submitting for review.'},
+    q49: {answer: 'D', reason: 'Design should be brief, clear, and human, using blocks and conversations effectively.'},
+    q50: {answer: 'D', reason: 'Sending an email to the app\'s registered email address is not a direct way to invoke the app.'},
+    q51: {answer: 'B', reason: 'Tokens should not be sent as part of the query string but should be transmitted as a bearer token in the Authorization HTTP header.'},
+    q52: {answer: 'C', reason: 'The \'challenge\' field is a randomly generated string that the server must respond with to verify ownership.'},
+    q53: {answer: 'B', reason: 'Socket Mode allows the app to use the Events API and interactive features without exposing a public HTTP Request URL.'},
+    q54: {answer: 'C', reason: 'Granular bot tokens represent workspace-level installation of an app and maintain the same access a user has.'},
+    q55: {answer: 'C', reason: 'The \'text\' parameter contains everything after the first space following the command, treated as a single parameter passed to the app.'},
+    q56: {answer: 'D', reason: 'Storing tokens in client-side JavaScript code for easy access is not recommended as it exposes them to security risks.'},
+    q57: {answer: 'D', reason: 'The error \'user_already_admin\' is not a potential error that could be returned when using the \'admin.users.setAdmin\' method.'},
+    q58: {answer: 'D', reason: 'The \'getUsers()\' method is not part of the Audit Logs API in Slack.'},
+    q59: {answer: 'C', reason: 'The Discovery API allows Org Owners to use approved third-party apps to export or act on messages and files from Slack.'},
+    q60: {answer: 'C', reason: 'DLP rules are used to flag messages or files for administrative action if they violate custom rules.'}
+};
+
+    function submitQuiz() {
+        const form = document.getElementById('quizForm');
+        let score = 0;
+        let totalQuestions = Object.keys(correctAnswers).length;
+
+        for (let q in correctAnswers) {
+            let answer = form[q]?.value;
+            if (answer === correctAnswers[q]) {
+                score++;
+            }
+        }
+
+        let percentage = (score / totalQuestions) * 100;
+        let resultText = `You scored ${score} out of ${totalQuestions} (${percentage.toFixed(2)}%).`;
+
+        if (percentage >= 75) {
+            resultText += " Congratulations, you passed!";
+        } else {
+            resultText += " Unfortunately, you didn't pass.";
+        }
+
+        document.getElementById('result').innerText = resultText;
+    }
+</script>
+
+</body>
+</html>
