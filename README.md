@@ -8,7 +8,7 @@ This tool is merely a 'quiz' against the PDF.
 
 To practice, visit:
 
-mws-acc.github.io/slack-dev-exam-prep
+https://mws-acc.github.io/slack-dev-practice-exam
 
 One answer per question.
 Click submit at the bottom when done and your score will show. 75% is passing.
