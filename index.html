@@ -770,28 +770,29 @@
 };
 
     function submitQuiz() {
-        const form = document.getElementById('quizForm');
-        let score = 0;
-        let totalQuestions = Object.keys(correctAnswers).length;
+    const form = document.getElementById('quizForm');
+    let score = 0;
+    let totalQuestions = Object.keys(correctAnswers).length;
 
-        for (let q in correctAnswers) {
-            let answer = form[q]?.value;
-            if (answer === correctAnswers[q]) {
-                score++;
-            }
+    for (let q in correctAnswers) {
+        let answer = form[q]?.value;  // Get the selected answer
+        if (answer === correctAnswers[q].answer) {  // Compare it to the correct answer
+            score++;
         }
-
-        let percentage = (score / totalQuestions) * 100;
-        let resultText = `You scored ${score} out of ${totalQuestions} (${percentage.toFixed(2)}%).`;
-
-        if (percentage >= 75) {
-            resultText += " Congratulations, you passed!";
-        } else {
-            resultText += " Unfortunately, you didn't pass.";
-        }
-
-        document.getElementById('result').innerText = resultText;
     }
+
+    let percentage = (score / totalQuestions) * 100;
+    let resultText = `You scored ${score} out of ${totalQuestions} (${percentage.toFixed(2)}%).`;
+
+    if (percentage >= 75) {
+        resultText += " Congratulations, you passed!";
+    } else {
+        resultText += " Unfortunately, you didn't pass.";
+    }
+
+    document.getElementById('result').innerText = resultText;
+}
+
 </script>
 
 </body>
