@@ -769,13 +769,14 @@
     q60: {answer: 'C', reason: 'DLP rules are used to flag messages or files for administrative action if they violate custom rules.'}
 };
 
-    function submitQuiz() {
+function submitQuiz() {
     const form = document.getElementById('quizForm');
     let score = 0;
     let totalQuestions = Object.keys(correctAnswers).length;
 
     for (let q in correctAnswers) {
-        let answer = form[q]?.value;  // Get the selected answer
+        // Find the selected radio button for the question
+        let answer = form.querySelector(`input[name="${q}"]:checked`)?.value;  // Get the selected answer
         if (answer === correctAnswers[q].answer) {  // Compare it to the correct answer
             score++;
         }
@@ -792,6 +793,7 @@
 
     document.getElementById('result').innerText = resultText;
 }
+
 
 </script>
 
